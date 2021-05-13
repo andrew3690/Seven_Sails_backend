@@ -57,7 +57,7 @@ ROOT_URLCONF = 'seven_sails.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -69,9 +69,6 @@ TEMPLATES = [
         },
     },
 ]
-
-TEMPLATE_DIR = os.path.join(BASE_DIR, "seven_sails/templates")
-
 WSGI_APPLICATION = 'seven_sails.wsgi.application'
 
 

@@ -1,6 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect, reverse
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView,View,RedirectView,ListView, DetailView
+from django.contrib.auth import authenticate, login as django_login, logout as django_logout
 
 class LoginView(TemplateView):
 	template_name = 'home/auth/login.html'
