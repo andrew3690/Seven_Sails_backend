@@ -21,3 +21,9 @@ class LoginView(TemplateView):
 
 class HomeView(LoginRequiredMixin,TemplateView):
 	template_name = 'home/home.html'
+
+class ImportacoesView(LoginRequiredMixin,TemplateView):
+	template_name = 'importacoes/lista_de_importacao.html'
+
+class EstoqueView(LoginRequiredMixin,TemplateView):
+	template_name = 'estoque/lista_de_estoque.html'
