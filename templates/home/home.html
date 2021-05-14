@@ -8,15 +8,25 @@
     </head>
 
     <div class= conteiner>
-        <a class = "btn btn-primary">Importaçoes</a>
-        <br>
-        <br>
-        <a class ="btn btn-primary">Estoque</a>
+        <p>
+            <a class = "btn btn-primary", href = "{%url 'estoque:importacoes' %}" >Importaçoes</a>
+        </p>
+
+        <p>
+            <a class ="btn btn-primary", href = "{%url 'estoque:estoque' %}">Estoque</a>
+        </p>
+
+        <p>
+            <a class ="btn btn-primary", href = "{%url 'estoque:logout' %}">Logout</a>
+        </p>
     </div>
-    <br>
-    <br>
+    
     <div class= conteiner>
         <h2>Dados referentes ao Balanço Patrimonial da empresa</h2>
+        
+    
+    
+    
     </div>
 
 {% endblock %}

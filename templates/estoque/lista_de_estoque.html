@@ -1,13 +1,12 @@
 {% extends "index.html" %}
 
-{% block title %} Lista de produtos importados {% endblock %}
+{% block title %} Lista de produtos estocados {% endblock %}
 
 {% block content %}
 
-
 <div class= conteiner>
     <p>
-        <a class = "btn btn-primary", href = "{%url 'estoque:importacao_detalhe' %}">Detalhes</a>
+        <a class = "btn btn-primary", href = "{%url 'estoque:estoque_detalhe' %}">Detalhes</a>
     </p>
     <p>
         <a class ="btn btn-primary", href = "{%url 'estoque:home' %}">Voltar</a>

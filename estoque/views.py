@@ -19,11 +19,25 @@ class LoginView(TemplateView):
 			message = 'Credenciais invalidas'
 			return render(request,self.template_name,{'message':message})
 
+class LogoutRedirectView(LoginRequiredMixin,RedirectView):
+	url = '/login/'
+
+	def get(self, request, *args, **kwargs):
+		django_logout(request)
+		return super().get(request, *args, **kwargs)
+
 class HomeView(LoginRequiredMixin,TemplateView):
 	template_name = 'home/home.html'
 
-class ImportacoesView(LoginRequiredMixin,TemplateView):
+class ImportacoesListView(LoginRequiredMixin,TemplateView):
 	template_name = 'importacoes/lista_de_importacao.html'
 
-class EstoqueView(LoginRequiredMixin,TemplateView):
+class ImportacoesDetail(LoginRequiredMixin,TemplateView):
+	template_name = 'importacoes/detalhes/detalhe.html'
+
+class EstoqueListView(LoginRequiredMixin,TemplateView):
 	template_name = 'estoque/lista_de_estoque.html'
+
+class EstoqueDetail(LoginRequiredMixin,TemplateView):
+	template_name = 'estoque/detalhe_produto/detalhe_produto.html'
+	
