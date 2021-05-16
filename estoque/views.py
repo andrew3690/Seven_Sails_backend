@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect, reverse
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import TemplateView,View,RedirectView,ListView, DetailView
 from django.contrib.auth import authenticate, login as django_login, logout as django_logout
+from .models import Produtos_importacao,Produtos_loja
 
 class LoginView(TemplateView):
 	template_name = 'home/auth/login.html'
@@ -29,15 +30,28 @@ class LogoutRedirectView(LoginRequiredMixin,RedirectView):
 class HomeView(LoginRequiredMixin,TemplateView):
 	template_name = 'home/home.html'
 
+
 class ImportacoesListView(LoginRequiredMixin,TemplateView):
 	template_name = 'importacoes/lista_de_importacao.html'
+	model = Produtos_importacao
 
 class ImportacoesDetail(LoginRequiredMixin,TemplateView):
 	template_name = 'importacoes/detalhes/detalhe.html'
+	model = Produtos_importacao
 
+class ImportacoesCadastroProdutoView(LoginRequiredMixin,TemplateView):
+	template_name = 'importacoes/cadastro/cadastro_produto.html'
+	model = Produtos_importacao
+	
 class EstoqueListView(LoginRequiredMixin,TemplateView):
 	template_name = 'estoque/lista_de_estoque.html'
+	model = Produtos_loja
 
 class EstoqueDetail(LoginRequiredMixin,TemplateView):
 	template_name = 'estoque/detalhe_produto/detalhe_produto.html'
+	model = Produtos_loja
+
+class EstoqueCadastroProdutoView(LoginRequiredMixin,TemplateView):
+	template_name = 'estoque/cadastro/cadastro_produto.html'
+	model = Produtos_loja
 	

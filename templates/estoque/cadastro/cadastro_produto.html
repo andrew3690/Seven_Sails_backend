@@ -1,0 +1,12 @@
+{% extends 'index.html' %}
+
+{%block title %} Cadastro de Produto de Importacao{% endblock %}
+
+{%block content %}
+<form action = "" method = "post"> 
+    {% csrf_token %} 
+    {{form.as_p }} 
+    <input type="submit" value="Submit"> 
+</form> 
+<a class = 'btn btn-primary' href ="{%url 'estoque:estoque' %}">Voltar</a>
+{% endblock %}

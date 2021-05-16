@@ -52,8 +52,6 @@ class Importacao(models.Model):
         on_delete = models.PROTECT
     )
 
-    
-
 class Produtos_loja(TimestampableMixin):
 
     codigo = models.CharField(

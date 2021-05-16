@@ -5,9 +5,35 @@
 {% block content %}
 
 <div class= conteiner>
+    <h3>Listagem de produtos</h3>
+        <table class = "table">
+            <thead>
+                <th> Produto </th>
+                <th> Quantidade </th>
+                <th> Peso(kg) </th>
+                <th> Espaço total ocupado por produto(cm³)</th>
+                <th> Detalhes </th>          
+            </thead>
+    
+            <tbody>
+            {% for object in object_list %}
+                <tr>
+                    <td>{{ object }}</td>
+                    <td>{{ object.quantidade }}</td>
+                    <td>{{ object.calcula_peso }}</td>
+                    <td>{{ object.get_espaco_total }}</td>
+                    <td>
+                        <a class = "btn-secondary", href = "{%url 'estoque:estoque_detalhe' %}">Detalhes</a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
     <p>
-        <a class = "btn btn-primary", href = "{%url 'estoque:estoque_detalhe' %}">Detalhes</a>
+        <a class ="btn btn-primary", href = "{%url 'estoque:estoque_cadastro' %}">Cadastro de Produto</a>
     </p>
+
     <p>
         <a class ="btn btn-primary", href = "{%url 'estoque:home' %}">Voltar</a>
     </p>
