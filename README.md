@@ -1,7 +1,7 @@
 # Seven_Sails_backend
 Aplicação backend voltada para gerenciamento de estoque, visando observar entrada e saida de produtos.
 
-'''
+
 Tendo em vista, o código utilizado neste projeto, é necessário ter a linguagem python instalada na máquina,
 se possivel, utilize uma máquina LINUX UBUNTU.
 
@@ -35,5 +35,3 @@ python3 manage.py runserver
 ##6. Acesse o programa pelo endereço pelo navegador
 
 http://127.0.0.1:8000/login/
-
-'''
