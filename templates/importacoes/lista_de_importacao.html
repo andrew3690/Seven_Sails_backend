@@ -20,9 +20,8 @@
             {% for object in object_list %}
                 <tr>
                     <td>{{ object }}</td>
-                    <td>{{ object.quantidade }}</td>
-                    <td>{{ object.calcula_peso }}</td>
-                    <td>{{ object.get_espaco_total }}</td>
+                    <td>{{ object }}</td>
+                    <td>{{ object }}</td>
                     <td>
                         <a class = "btn btn-primary", href = "{%url 'estoque:importacao_detalhe' %}">Detalhes</a>
                     </td>
