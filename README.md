@@ -35,3 +35,5 @@ python3 manage.py runserver
 ##6. Acesse o programa pelo endereço pelo navegador
 
 http://127.0.0.1:8000/login/
+
+OBS: É necessário que a instancia MYSQL esteja rodando ao mesmo tempo que o código.
