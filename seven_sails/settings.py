@@ -74,7 +74,8 @@ WSGI_APPLICATION = 'seven_sails.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
-
+# MYSQL
+'''
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
@@ -85,7 +86,18 @@ DATABASES = {
         'PORT': '3306',
     }
 }
-
+'''
+# Postgres
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'Seven_sails',
+        'USER': 'dba',
+        'PASSWORD': 'and010500',
+        'HOST': 'localhost',
+        'PORT': '5432',
+    }
+}
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
 
