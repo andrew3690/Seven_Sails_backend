@@ -47,3 +47,12 @@ http://127.0.0.1:8000/login/
 
 //
 OBS: É necessário que a instancia MYSQL esteja rodando ao mesmo tempo que o código.
+
+// Adicionando Docker-compose ao projeto, visando conteinerizar a aplicação para uso desta na AWS
+
+uso de docker-compose.yml para conteneizar a aplicação
+para isso use o seguinte comando:
+
+docker-compose up --> para conteneirizar o banco de dados apenas (rode este comando primeiro)
+
+docker-compose up server --> para contenzerizar a aplicação em Django
