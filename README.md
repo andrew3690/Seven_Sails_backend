@@ -56,3 +56,14 @@ para isso use o seguinte comando:
 docker-compose up --> para conteneirizar o banco de dados apenas (rode este comando primeiro)
 
 docker-compose up server --> para contenzerizar a aplicação em Django
+
+crie um ambiente virtual, e acesse a pasta activate do ambiente virtual criado por meio do seguinte comando
+nano seven_sails_env/bin/activate
+
+ao fim do arquivo adcione as seguintes linhas
+
+export DB_USER=dba
+export DB_PWD=and010500
+export DB_HOST=localhost
+
+Dessa forma será possivel rodar o programa sem problemas.
