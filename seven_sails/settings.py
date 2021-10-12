@@ -13,6 +13,8 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 from pathlib import Path
 from django.urls import reverse_lazy
 import os
+import sys
+from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -25,9 +27,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '@f3#6e*=^&4fj6mlw92+u#8$vr4op)b1^gs$l@a4ngu+_u8r9i'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = config('DEBUG',default = True, cast = bool)
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['0.0.0.0','127.0.0.1']
 
 
 # Application definition
@@ -74,30 +76,36 @@ WSGI_APPLICATION = 'seven_sails.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
+
 # MYSQL
-'''
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'Seven_sails',
-        'USER': 'dba',
-        'PASSWORD': 'and010500',
-        'HOST': 'localhost',
+        'USER': os.environ['DB_USER'],
+        'PASSWORD': os.environ['DB_PWD'],
+        'HOST': os.environ['DB_HOST'],
         'PORT': '3306',
     }
 }
-'''
+
 # Postgres
+'''
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'Seven_sails',
-        'USER': 'dba',
-        'PASSWORD': 'and010500',
-        'HOST': 'localhost',
+        'USER': os.environ['DB_USER'],
+        'PASSWORD': os.environ['DB_PWD'],
+        'HOST': os.enviorn['DB_HOST'],
         'PORT': '5432',
     }
 }
+'USER': 'dba', #config('USER'),
+'PASSWORD':'and010500',#config('PASSWORD'),
+'HOST': os.environ['DB_HOST'],#config('HOST'),#'localhost'
+'''
+
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
 
