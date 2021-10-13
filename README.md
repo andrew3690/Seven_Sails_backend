@@ -56,6 +56,9 @@ para isso use o seguinte comando:
 docker-compose up --> para conteneirizar o banco de dados apenas (rode este comando primeiro)
 
 docker-compose up server --> para contenzerizar a aplicação em Django
+      comandos essenciais do docker:
+            docker exec -it <id_do_conteiner> /bin/bash --> acessar a linha de comando no servidor da aplicação.
+            docker logs <id_do_conteiner> --> acessar os logs do conteiner.
 
 crie um ambiente virtual, e acesse a pasta activate do ambiente virtual criado por meio do seguinte comando
 nano seven_sails_env/bin/activate

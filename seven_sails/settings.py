@@ -14,7 +14,6 @@ from pathlib import Path
 from django.urls import reverse_lazy
 import os
 import sys
-from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -27,7 +26,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '@f3#6e*=^&4fj6mlw92+u#8$vr4op)b1^gs$l@a4ngu+_u8r9i'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = config('DEBUG',default = True, cast = bool)
+DEBUG = True
 
 ALLOWED_HOSTS = ['0.0.0.0','127.0.0.1']
 
