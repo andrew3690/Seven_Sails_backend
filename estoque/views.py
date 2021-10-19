@@ -33,7 +33,7 @@ class HomeView(LoginRequiredMixin,TemplateView):
 	template_name = 'home/home.html'
 
 
-class ImportacoesListView(LoginRequiredMixin,TemplateView):
+class ImportacoesListView(LoginRequiredMixin,ListView):
 	template_name = 'importacoes/lista_de_importacao.html'
 	model = Produtos_importacao
 
@@ -47,7 +47,7 @@ class ImportacoesCadastroProdutoView(LoginRequiredMixin,FormView, CreateView):
 	def get_success_url(self):
 		return reverse('estoque:importacao_produto')
 
-class EstoqueListView(LoginRequiredMixin,TemplateView):
+class EstoqueListView(LoginRequiredMixin,ListView):
 	template_name = 'estoque/lista_de_estoque.html'
 	model = Produtos_loja
 
@@ -60,4 +60,3 @@ class EstoqueCadastroProdutoView(LoginRequiredMixin, FormView, CreateView):
 	form_class = RegisterProdutosEstoqueform
 	def get_success_url(self):
 		return reverse('estoque:estoque_cadastro')
-	

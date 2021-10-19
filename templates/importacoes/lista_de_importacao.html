@@ -9,19 +9,22 @@
     <h3>Listagem de produtos</h3>
         <table class = "table">
             <thead>
-                <th> Produto </th>
+                <th> Codigo do Produto </th>
+                <th> Nome </th>
                 <th> Quantidade </th>
-                <th> Peso(kg) </th>
-                <th> Espaço total ocupado por produto(cm³)</th>
-                <th> Detalhes </th>          
+                <th> Preco </th>
+                <th> Status </th>
+                <th> Atualizar / Apagar</th>          
             </thead>
     
             <tbody>
             {% for object in object_list %}
                 <tr>
-                    <td>{{ object }}</td>
-                    <td>{{ object }}</td>
-                    <td>{{ object }}</td>
+                    <td>{{ object.codigo }}</td>
+                    <td>{{ object.nome }}</td>
+                    <td>{{ object.quantidade }}</td>
+                    <td>{{ object.preco }} </td>
+                    <td>{{ object.status }} </td> 
                     <td>
                         <a class = "btn btn-primary", href = "{%url 'estoque:importacao_detalhe' %}">Detalhes</a>
                     </td>

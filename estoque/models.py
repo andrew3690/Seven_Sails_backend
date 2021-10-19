@@ -20,12 +20,13 @@ class Produtos_importacao(TimestampableMixin):
     )
     
     quantidade = models.IntegerField(
-        default = 0
+        default = 0,
+        blank = True
     )
 
     descricao = models.CharField(
         max_length = 60,
-        null = True 
+        blank = True
     )
 
     preco = models.DecimalField(
@@ -76,11 +77,6 @@ class Produtos_loja(TimestampableMixin):
     status = models.CharField(
         max_length= 45,
         default = "esperando produto",
-    )
-
-    importacao = models.ForeignKey(
-        Importacao, 
-        on_delete = models.PROTECT
     )
 
     def __str__(self):
