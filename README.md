@@ -6,8 +6,10 @@ Aplicação backend voltada para gerenciamento de estoque, visando observar entr
 
 
 # Modelagem do sistema (Banco de Dados)
-  Diagrama de Entidades
-![Diagrama de Banco de dados Seven Sails](https://user-images.githubusercontent.com/42048231/117823804-403a1280-b244-11eb-9aa1-ab1dd39f2529.png)
+Diagrama conceitual.
+![image](https://user-images.githubusercontent.com/42048231/137960511-04702f4e-7933-4e91-b9ca-2174fc9ed2e8.png)
 
-  Diagrama Entidade Relacionamento
-![Diagrama de Banco de Dados Real](https://user-images.githubusercontent.com/42048231/117968403-8652ad00-b2fc-11eb-8d99-99ebac199462.png)
+Diagrama lógico.
+
+![image](https://user-images.githubusercontent.com/42048231/137960889-fe0b5b5d-04cb-4027-a3ef-25de2d286998.png)
+
