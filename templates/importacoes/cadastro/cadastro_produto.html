@@ -5,8 +5,9 @@
 {%block content %}
 <form action = "" method = "post"> 
     {% csrf_token %} 
-    {{form.as_p }} 
+    {{form.as_p }}
     <input type="submit" class = "btn btn-primary" value="Submit"> 
-</form> 
+</form>
+<br>
 <a class = 'btn btn-primary' href ="{%url 'estoque:estoque' %}">Voltar</a>
 {% endblock %}

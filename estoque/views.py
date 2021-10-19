@@ -2,7 +2,9 @@ from django.shortcuts import render, redirect, reverse
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import TemplateView,View,RedirectView,ListView, DetailView
 from django.contrib.auth import authenticate, login as django_login, logout as django_logout
+from django.views.generic.edit import CreateView, FormView
 from .models import Produtos_importacao,Produtos_loja
+from .forms import RegisterProdutosImportacaoform, RegisterProdutosEstoqueform
 
 class LoginView(TemplateView):
 	template_name = 'home/auth/login.html'
@@ -39,10 +41,12 @@ class ImportacoesDetail(LoginRequiredMixin,TemplateView):
 	template_name = 'importacoes/detalhes/detalhe.html'
 	model = Produtos_importacao
 
-class ImportacoesCadastroProdutoView(LoginRequiredMixin,TemplateView):
+class ImportacoesCadastroProdutoView(LoginRequiredMixin,FormView, CreateView):
 	template_name = 'importacoes/cadastro/cadastro_produto.html'
-	model = Produtos_importacao
-	
+	form_class = RegisterProdutosImportacaoform
+	def get_success_url(self):
+		return reverse('estoque:importacao_produto')
+
 class EstoqueListView(LoginRequiredMixin,TemplateView):
 	template_name = 'estoque/lista_de_estoque.html'
 	model = Produtos_loja
@@ -51,7 +55,9 @@ class EstoqueDetail(LoginRequiredMixin,TemplateView):
 	template_name = 'estoque/detalhe_produto/detalhe_produto.html'
 	model = Produtos_loja
 
-class EstoqueCadastroProdutoView(LoginRequiredMixin,TemplateView):
+class EstoqueCadastroProdutoView(LoginRequiredMixin, FormView, CreateView):
 	template_name = 'estoque/cadastro/cadastro_produto.html'
-	model = Produtos_loja
+	form_class = RegisterProdutosEstoqueform
+	def get_success_url(self):
+		return reverse('estoque:estoque_cadastro')
 	
