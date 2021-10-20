@@ -1,0 +1,19 @@
+{% extends "index.html" %}
+
+{% block title %} Deleção de Produtos {% endblock %}
+
+
+{%block content %}
+<div class ="card-body">
+    <form method="post">
+        {% csrf_token %}
+        <div class="alert alert-warning" role ="alert">
+            Tem certeza que voce quer deletar este(s) <strong>{{ object }}</strong> ?
+        </div>
+
+        <button class ="btn btn-outline-danger", href = "{%url 'estoque:estoque' %}">Deletar</button>
+
+        <a class ="btn btn-primary", href = "{%url 'estoque:home' %}">Voltar</a>
+    </form>
+</div>
+{% endblock %}

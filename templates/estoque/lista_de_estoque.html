@@ -25,8 +25,8 @@
                     <td>{{ object.preco }}</td>
                     <td>{{ object.status }}</td>
                     <td>
-                        <a class = "btn-secondary", href = "{%url 'estoque:estoque_detalhe' %}">Detalhes</a>
-                        <a class = "btn-secondary", href = "{%url 'estoque:estoque_detalhe' %}">Apagar</a>
+                        <a class = "btn btn-primary", href = "{%url 'estoque:estoque_detalhe' object.pk %}">Detalhes</a>
+                        <a class = "btn btn-primary", href = "{%url 'estoque:estoque_delete' object.pk %}">Apagar</a>
                     </td>
                 </tr>
             {% endfor %}

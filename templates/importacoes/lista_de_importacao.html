@@ -4,7 +4,6 @@
 
 {% block content %}
 
-
 <div class= conteiner>
     <h3>Listagem de produtos</h3>
         <table class = "table">
@@ -14,7 +13,7 @@
                 <th> Quantidade </th>
                 <th> Preco </th>
                 <th> Status </th>
-                <th> Atualizar / Apagar</th>          
+                <th> Detalhes / Apagar</th>          
             </thead>
     
             <tbody>
@@ -26,7 +25,8 @@
                     <td>{{ object.preco }} </td>
                     <td>{{ object.status }} </td> 
                     <td>
-                        <a class = "btn btn-primary", href = "{%url 'estoque:importacao_detalhe' %}">Detalhes</a>
+                        <a class = "btn btn-primary", href = "{%url 'estoque:importacao_detalhe' object.pk %}">Detalhes</a>
+                        <a class = "btn btn-primary", href = "{%url 'estoque:importacao_delete' object.pk %}">Apagar</a>
                     </td>
                 </tr>
             {% endfor %}
