@@ -1,6 +1,8 @@
 from django.urls import path, include
 from . import views
 from .views import EstoqueDeleteView,ImportacoesDeleteView
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+
 
 app_name = 'estoque'
 
@@ -17,3 +19,5 @@ urlpatterns = [
     path('estoque/detail/<int:pk>/',views.EstoqueDetail.as_view(),name = 'estoque_detalhe'),
     path('estoque/cadastro/',views.EstoqueCadastroProdutoView.as_view(),name = 'estoque_cadastro')
 ]
+
+urlpatterns += staticfiles_urlpatterns()

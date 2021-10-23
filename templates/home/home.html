@@ -1,32 +1,103 @@
 {% extends "index.html" %}
 
+{% load static %}
+
 {% block title %} Home do gerenciador {% endblock %}
 
 {% block content %}
     <head>
         <h1>Home do Gerenciador</h1>
+
+        <nav class="navbar justify-content-between">
+            <a class="navbar-brand"></a>
+            <form class="form-inline">
+                <a class ="btn btn-outline-danger", href = "{%url 'estoque:logout' %}">Sair</a>
+            </form>
+        </nav>
+
     </head>
 
-    <div class= conteiner>
-        <p>
-            <a class = "btn btn-primary", href = "{%url 'estoque:importacoes' %}" >Importaçoes</a>
-        </p>
+    <body>
 
-        <p>
-            <a class ="btn btn-primary", href = "{%url 'estoque:estoque' %}">Estoque</a>
-        </p>
+        <div class= "row">
 
-        <p>
-            <a class ="btn btn-primary", href = "{%url 'estoque:logout' %}">Logout</a>
-        </p>
-    </div>
+            <div class="col col-md-3 ">
+                <div class="card bg-dark" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">Gerenciamento de Importações</h5>
+                            <p class="card-text">Criação, atualização e deleção de importção de produtos</p>
+                        <a href="{%url 'estoque:importacoes' %}" class="btn btn-primary">Importaçoes</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col col-md-9">
+                <div class="card bg-dark" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">Gerenciamento de Estoque</h5>
+                            <p class="card-text">Criação,atualização e deleção de produtos estocados</p>
+                        <a href="{%url 'estoque:estoque' %}" class="btn btn-primary">Estoque</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <h2>Análises Referentes a dados das Importaçoes</h2>
     
-    <div class= conteiner>
-        <h2>Dados referentes ao Balanço Patrimonial da empresa</h2>
+        <div class="row">
+            
+            <div class="col-sm-6">
+                <div class="card bg-dark" style="width: 18rem;">
+                    <img class="card-img-top" src = "{% static 'imgs/exportadores.jpg' %}" alt="Imagem de capa do card">
+                        <div class="card-body">
+                            <h5 class="card-title">Melhores Vendedores</h5>
+                                <p class="card-text">Ranqueamento dos melhores Vendedores por menor tempo de entrega</p>
+                            <a href="#" class="btn btn-primary">Visitar</a>
+                        </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6">
+                <div class="card bg-dark" style="width: 18rem;">
+                    <img class="card-img-top" src = "{% static 'imgs/compras.jpg' %}" alt="Imagem de capa do card">
+                        <div class="card-body">
+                            <h5 class="card-title">Produtos mais comprados</h5>
+                                <p class="card-text">Ranqueamento dos produtos mais importados</p>
+                            <a href="#" class="btn btn-primary">Visitar</a>
+                        </div>
+                </div>
+            </div>
         
-    
-    
-    
-    </div>
+        </div>
 
+        <br>
+    
+        <div class="row">
+        
+            <div class="col-sm-6">
+                <div class="card bg-dark" style="width: 18rem;">
+                    <img class="card-img-top" src = "{% static 'imgs/vendas.jpg' %}" alt="Imagem de capa do card">
+                        <div class="card-body">
+                            <h5 class="card-title">Campeões de Venda</h5>
+                                <p class="card-text">Ranqueamento dos produtos mais vendidos</p>
+                            <a href="#" class="btn btn-primary">Visitar</a>
+                        </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6">
+                <div class="card bg-dark" style="width: 18rem;">
+                    <img class="card-img-top" src = "{% static 'imgs/compras.jpg' %}" alt="Imagem de capa do card">
+                        <div class="card-body">
+                            <h5 class="card-title">Melhores Vendedores</h5>
+                                <p class="card-text">Ranqueamento dos melhores Vendedores por menor tempo de entrega</p>
+                            <a href="#" class="btn btn-primary">Visitar</a>
+                        </div>
+                </div>
+            </div>
+        
+        </div>
+    
+    </body>
 {% endblock %}

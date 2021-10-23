@@ -28,27 +28,29 @@
     </style>
 
   </head>
-  <body class="d-flex h-100 text-center text-white bg-dark">
+<body class="d-flex h-100 text-center text-white bg-dark">
+  <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+    <header class="mb-auto">
+      <div>
+        <h3 class="float-md-start mb-0">Seven Sails - Gerenciador de Estoque</h3>
+        <nav class="nav nav-masthead justify-content-center float-md-end">
+        </nav>
+      </div>
+    </header>
 
-<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-  <header class="mb-auto">
-    <div>
-      <h3 class="float-md-start mb-0">Seven Sails - Gerenciador de Estoque</h3>
-      <nav class="nav nav-masthead justify-content-center float-md-end">
-      </nav>
-    </div>
-  </header>
+    <main class="px-3">
+      {% block content %}
 
-  <main class="px-3">
-    {% block content %}
+      {% endblock %}
+    </main>
+  </div>
+</body>
 
-    {% endblock %}
-  </main>
+<footer>
+  
+  <p>App Desenvolvido por André Luiz</p>
 
-  <footer class="mt-auto text-white-50">
-      
-  </footer>
-</div>
+</footer>
 
-  </body>
 </html>
+
