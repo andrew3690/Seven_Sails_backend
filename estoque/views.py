@@ -6,6 +6,7 @@ from django.views.generic.edit import CreateView, DeleteView, FormView
 from .models import Produtos_importacao,Produtos_loja
 from .forms import RegisterProdutosImportacaoform, RegisterProdutosEstoqueform
 import pandas as pd
+# from django_pandas.io import read_frame
 
 class LoginView(TemplateView):
 	template_name = 'home/auth/login.html'
@@ -98,7 +99,23 @@ class AnaliseDeVendasView(LoginRequiredMixin,TemplateView):
 
 class AnaliseDeProdutosView(LoginRequiredMixin,TemplateView):
 	template_name = 'Datapages/produtos/produtos.html'
+	
 	model = Produtos_importacao
+
+def analise(request):
+	model = Produtos_importacao
+
+	item = model.objects.all().values()
+	df = pd.DataFrame(item)
+		
+	mydict = {
+		"df": df.to_html()
+	}
+
+	return render(request, 'Datapages/produtos/analises.html', context=mydict)
+
+
+	# df = read_frame(model, fieldnames = ['nome','status','quantidade','preco','quantidade'])
 
 class AnaliseDeFinancasView(LoginRequiredMixin,TemplateView):
 	template_name = 'Datapages/financas/financas.html'

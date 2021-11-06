@@ -1,0 +1,20 @@
+{% extends "index.html" %}
+
+{% load static %}
+
+{% block title %} Análise de Produtos {% endblock %}
+
+{% block content %}
+
+    {{df|safe}}
+
+    <div>
+        <p>
+            <a class ="btn btn-primary", href = "{%url 'estoque:home' %}">Voltar</a>
+        </p>
+    </div>
+
+{% endblock %}
+
+
+

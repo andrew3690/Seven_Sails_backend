@@ -22,6 +22,8 @@ urlpatterns = [
     path('estoque/cadastro/',views.EstoqueCadastroProdutoView.as_view(),name = 'estoque_cadastro'),
 
     path('analises/produtos/',views.AnaliseDeProdutosView.as_view(),name ='analise_de_produtos'),
+    path('analises/produtos/teste',views.analise),
+
     path('analises/vendas/',views.AnaliseDeVendasView.as_view(),name = 'analise_de_vendas'),
     path('analises/vendedores/',views.AnaliseDeVendedoresView.as_view(),name='analise_de_vendedores'),
     path('analises/financas/',views.AnaliseDeFinancasView.as_view(), name='analise_de_financas')

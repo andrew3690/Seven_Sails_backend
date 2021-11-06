@@ -5,6 +5,13 @@
 {% block title %} Análise de Produtos {% endblock %}
 
 {% block content %}
+
+    {{model|safe}}
+
+<p>
+    <a class ="btn btn-primary", href = "{%url 'estoque:analises' %}">Analises</a>
+</p>
+
 <p>
     <a class ="btn btn-primary", href = "{%url 'estoque:home' %}">Voltar</a>
 </p>
