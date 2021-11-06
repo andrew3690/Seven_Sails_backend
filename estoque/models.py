@@ -14,9 +14,20 @@ class TimestampableMixin(models.Model):
         abstract = True
 
 class Produtos_importacao(TimestampableMixin):
+
+    codigo = models.CharField(
+        max_length= 45,
+        default = "0ACB"
+    )
+
     nome = models.CharField(
         max_length = 60,
         default = "produto"
+    )
+
+    status = models.CharField(
+        max_length= 45,
+        default = "esperando produto",
     )
     
     quantidade = models.IntegerField(
@@ -39,19 +50,23 @@ class Produtos_importacao(TimestampableMixin):
         max_digits= 6
     )
 
+    nome_exportador = models.CharField(
+        max_length= 50,
+        default ="Nome:",
+        blank= False
+    )
+
+    pais = models.CharField(
+        max_length= 50,
+        default ="País:",
+        blank= False
+    )
+
     def __str__(self):
         return "%s, %s"%(self.nome, self.descricao)
 
     class Meta:
         verbose_name_plural = "Produtos_importacao"
-
-
-class Importacao(models.Model):
-
-    produto_importacao = models.ForeignKey( 
-        Produtos_importacao, 
-        on_delete = models.PROTECT
-    )
 
 class Produtos_loja(TimestampableMixin):
 
@@ -76,7 +91,7 @@ class Produtos_loja(TimestampableMixin):
 
     status = models.CharField(
         max_length= 45,
-        default = "esperando produto",
+        default = "produto em estoque",
     )
 
     def __str__(self):

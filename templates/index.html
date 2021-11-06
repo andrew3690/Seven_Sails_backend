@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <title>{% block title %}{% endblock %} Seven Sails - Gerenciador de Estoque</title>
+    <title>{% block title %}Seven Sails - Gerenciador de Estoque{% endblock %}</title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 
@@ -28,29 +28,27 @@
     </style>
 
   </head>
-<body class="d-flex h-100 text-center text-white bg-dark">
-  <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-    <header class="mb-auto">
-      <div>
-        <h3 class="float-md-start mb-0">Seven Sails - Gerenciador de Estoque</h3>
-        <nav class="nav nav-masthead justify-content-center float-md-end">
-        </nav>
-      </div>
-    </header>
-
-    <main class="px-3">
-      {% block content %}
-
-      {% endblock %}
-    </main>
-  </div>
-</body>
-
-<footer>
   
-  <p>App Desenvolvido por André Luiz</p>
+  <body>
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+      
+      <header class="mb-auto">
+        <div>
+          <h3 class="float-md-start mb-0">Seven Sails</h3>
+          <nav class="nav nav-masthead justify-content-center float-md-end">
+          </nav>
+        </div>
+      </header>
 
-</footer>
+      <main class="px-3">
+        {% block content %}
+
+        {% endblock %}
+      </main>
+    
+    </div>
+  </body>
+
 
 </html>
 

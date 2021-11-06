@@ -53,7 +53,7 @@
                         <div class="card-body">
                             <h5 class="card-title">Melhores Vendedores</h5>
                                 <p class="card-text">Ranqueamento dos melhores Vendedores por menor tempo de entrega</p>
-                            <a href="#" class="btn btn-primary">Visitar</a>
+                            <a href="{%url 'estoque:analise_de_vendedores' %}" class="btn btn-primary">Visitar</a>
                         </div>
                 </div>
             </div>
@@ -64,7 +64,7 @@
                         <div class="card-body">
                             <h5 class="card-title">Produtos mais comprados</h5>
                                 <p class="card-text">Ranqueamento dos produtos mais importados</p>
-                            <a href="#" class="btn btn-primary">Visitar</a>
+                            <a href= "{%url 'estoque:analise_de_produtos' %}" class="btn btn-primary">Visitar</a>
                         </div>
                 </div>
             </div>
@@ -81,7 +81,7 @@
                         <div class="card-body">
                             <h5 class="card-title">Campeões de Venda</h5>
                                 <p class="card-text">Ranqueamento dos produtos mais vendidos</p>
-                            <a href="#" class="btn btn-primary">Visitar</a>
+                            <a href="{%url 'estoque:analise_de_vendas' %}" class="btn btn-primary">Visitar</a>
                         </div>
                 </div>
             </div>
@@ -90,9 +90,9 @@
                 <div class="card bg-dark" style="width: 18rem;">
                     <img class="card-img-top" src = "{% static 'imgs/compras.jpg' %}" alt="Imagem de capa do card">
                         <div class="card-body">
-                            <h5 class="card-title">Melhores Vendedores</h5>
-                                <p class="card-text">Ranqueamento dos melhores Vendedores por menor tempo de entrega</p>
-                            <a href="#" class="btn btn-primary">Visitar</a>
+                            <h5 class="card-title">Financas da Empresa</h5>
+                                <p class="card-text">Analise de Dados financeiros da empresa, predição de compra de produtos</p>
+                            <a href="{%url 'estoque:analise_de_financas' %}" class="btn btn-primary">Visitar</a>
                         </div>
                 </div>
             </div>

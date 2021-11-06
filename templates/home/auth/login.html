@@ -1,20 +1,23 @@
 {% extends "index.html" %}
 
+{% load static %}
+
 {% block title %} Login {% endblock %}
 
 {% block content %}
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
 
-    <div class = conteiner>
+    <div class="card d-flex justify-content-center" style="width:30rem;">
+
         <h3> Login de Usuario</h3>
             {{ nome }}
-            
         {% if message %}
         <div class="alert alert-primary">
             {{ message }}
         </div>
         {% endif %}
         
-        <form action="/login/" method="post">
+        <form action="/login/" class="login-form" method="post">
             {% csrf_token %}
         
             <div class="form-group">
@@ -24,7 +27,8 @@
         
             <div class="form-group">
                 <label for="password">Senha</label>
-                <input type="password" class="form-control" id="password" name="password" placeholder="Entre com a senha">
+                <input type="password" class="form-control" id="password" name="password"
+                       placeholder="Entre com a senha">
             </div>
         
             <button class="btn btn-primary">Entrar</button>

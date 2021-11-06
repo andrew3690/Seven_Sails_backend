@@ -87,3 +87,19 @@ class EstoqueCadastroProdutoView(LoginRequiredMixin, FormView, CreateView):
 	form_class = RegisterProdutosEstoqueform
 	def get_success_url(self):
 		return reverse('estoque:estoque_cadastro')
+
+class AnaliseDeVendedoresView(LoginRequiredMixin,TemplateView):
+	template_name = 'Datapages/vendedores/vendedores.html'
+	model = Produtos_loja
+
+class AnaliseDeVendasView(LoginRequiredMixin,TemplateView):
+	template_name = 'Datapages/vendas/vendas.html'
+	model = Produtos_importacao
+
+class AnaliseDeProdutosView(LoginRequiredMixin,TemplateView):
+	template_name = 'Datapages/produtos/produtos.html'
+	model = Produtos_importacao
+
+class AnaliseDeFinancasView(LoginRequiredMixin,TemplateView):
+	template_name = 'Datapages/financas/financas.html'
+	
