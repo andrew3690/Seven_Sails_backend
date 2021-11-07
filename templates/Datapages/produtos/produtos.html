@@ -5,11 +5,11 @@
 {% block title %} Análise de Produtos {% endblock %}
 
 {% block content %}
-
-    {{model|safe}}
-
+    {% if chart %}
+        <img src="data:static/imgs/graphs/produtos/png;base64, {{chart|safe}}">
+    {% endif %}
 <p>
-    <a class ="btn btn-primary", href = "{%url 'estoque:analises' %}">Analises</a>
+    <a class ="btn btn-primary", href = "{%url 'estoque:analise_produtos' %}">Analises</a>
 </p>
 
 <p>

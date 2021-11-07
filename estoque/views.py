@@ -3,6 +3,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import TemplateView,RedirectView,ListView, DetailView
 from django.contrib.auth import authenticate, login as django_login, logout as django_logout
 from django.views.generic.edit import CreateView, DeleteView, FormView
+from .utils import get_plot
 from .models import Produtos_importacao,Produtos_loja
 from .forms import RegisterProdutosImportacaoform, RegisterProdutosEstoqueform
 import pandas as pd
@@ -97,25 +98,39 @@ class AnaliseDeVendasView(LoginRequiredMixin,TemplateView):
 	template_name = 'Datapages/vendas/vendas.html'
 	model = Produtos_importacao
 
+'''
 class AnaliseDeProdutosView(LoginRequiredMixin,TemplateView):
 	template_name = 'Datapages/produtos/produtos.html'
-	
-	model = Produtos_importacao
+'''
+
+def AnaliseDeProdutosView(request):
+		model = Produtos_importacao.objects.all()
+
+		x = [x.pais for x in model]
+		y = [y.created_at for y in model]
+
+		chart = get_plot(x,y)
+
+		return render(request,'Datapages/produtos/produtos.html',{'chart':chart})
+		
+
+
 
 def analise(request):
 	model = Produtos_importacao
 
+	# Tabela a ser analisada
 	item = model.objects.all().values()
+
+	# Criação de um DataFrame visando os campos de Nome do Exportador, País, data da compra, data de recepção do objeto
 	df = pd.DataFrame(item)
-		
+	df = df[["nome_exportador","pais","created_at","updated_at"]].groupby("pais").mean()
+
 	mydict = {
 		"df": df.to_html()
 	}
 
 	return render(request, 'Datapages/produtos/analises.html', context=mydict)
-
-
-	# df = read_frame(model, fieldnames = ['nome','status','quantidade','preco','quantidade'])
 
 class AnaliseDeFinancasView(LoginRequiredMixin,TemplateView):
 	template_name = 'Datapages/financas/financas.html'
